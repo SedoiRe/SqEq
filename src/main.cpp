@@ -88,12 +88,12 @@ void PrintInfoOut(SqEqRoots roots) {
  	 		StandartInfoOut("one");
  	 		printf("%lf\n", roots.x1);
  	 		break;
- 	    case TWO_ROOTS:
- 	    	StandartInfoOut("two");
- 	    	printf("%lf %lf\n", roots.x1, roots.x2);
- 	    	break;
- 	    case INF_ROOTS:
- 	    	StandartInfoOut("infinity");
+ 	    	case TWO_ROOTS:
+ 	    		StandartInfoOut("two");
+ 	    		printf("%lf %lf\n", roots.x1, roots.x2);
+ 	    		break;
+ 	    	case INF_ROOTS:
+ 	    		StandartInfoOut("infinity");
  	}
 }
 
@@ -102,8 +102,8 @@ bool ReadArgs(SqEqArgs* args) {
 
 	//ax^2 + bx + c = 0
 	double a = 0.0,
-		   b = 0.0,
-		   c = 0.0;
+	       b = 0.0,
+	       c = 0.0;
 
 	unsigned int count_read = scanf("%lf%lf%lf", &a, &b, &c);
 	if (count_read < 3)
@@ -139,7 +139,7 @@ SqEqRoots SqEq(SqEqArgs args) {
 		else {
 		 	double d = sqrt(dd); //Determinant
 		 	return {(-args.b + d) / (2*args.a), 
-		 		    (-args.b - d) / (2*args.a), 
+		 		(-args.b - d) / (2*args.a), 
 		 	        TWO_ROOTS};
 		}
 	}
@@ -147,8 +147,8 @@ SqEqRoots SqEq(SqEqArgs args) {
 
 bool RootsEqu(SqEqRoots out, SqEqRoots correct) {
  	return (out.x1    == correct.x1 &&
- 			out.x2    == correct.x2 &&
- 			out.count == correct.count); 
+ 	        out.x2    == correct.x2 &&
+ 	        out.count == correct.count); 
 }
 
 void LinEqTest() {
